@@ -1,0 +1,340 @@
+---
+format:
+  revealjs:
+    width: 1920
+    height: 1080
+    transition: fade
+    theme: style.scss
+    fontsize: "60px"
+    slide-number: false
+    menu: false
+fontcolor: white
+---
+
+## {background-image="images/first-slide.png"}
+
+## Πρόγνωση {background-image="images/background.png"}
+\
+\
+\
+
+
+:::{.fragment}
+
+***Πόση ώρα θα κάνω να φτάσω στο γραφείο;***
+
+:::
+
+## Πρόγνωση έκβασης υγείας {background-image="images/background.png"}
+\
+\
+
+> **Ερώτημα:**
+>
+> *Για ένα συγκεκριμένο ασθενή πόσο πιθανή είναι μία έκβαση ενδιαφέροντος;*
+
+\
+\
+
+
+:::{.fragment}
+
+Πόσο πιθανό είναι για έναν ασθενή με:
+
+- υπέρταση να πάθει έμφραγμα;
+- κορονοϊό να χρειαστεί εισαγωγή στη ΜΕΘ;
+
+:::
+
+## Πρόγνωση έκβασης υγείας {background-image="images/background.png"}
+\
+\
+
+$X\in R^p$: Χαρακτηριστικά ασθενή
+\
+$Y\in \{0,1\}$: Έκβαση που παρατηρούμε
+
+
+## Πρόγνωση έκβασης υγείας {background-image="images/background.png"}
+\
+\
+
+> **Στόχος:**
+>
+> *Έχοντας συλλέξει τα δεδομένα για $n$ ασθενείς $(X,Y)$, ποια είναι η αναμενόμενη εξατομικευμένη έκβαση;*
+
+$$r(x) = E\{Y|X=x\} = P(Y=1 | X=x)$$
+
+
+
+## Πρόγνωση έκβασης υγείας {background-image="images/background.png"}
+![](images/cope.png)
+
+
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+> **Ερώτημα:**
+>
+> *Για ένα συγκεκριμένο ασθενή, είναι καλύτερη η θεραπεία Α ή η θεραπεία Β;*
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+> **Πρόβλημα:**
+>
+> *Δεν μπορούμε ποτέ να γνωρίζουμε τι θα συνέβαινε, αν ο ασθενής είχε λάβει την
+> εναλλακτική θεραπεία.*
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+$X\in R^p$: Χαρακτηριστικά ασθενή
+\
+$T\in \{0,1\}$: Θεραπεία που έλαβε ο ασθενής
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+$Y\in \{0,1\}$: Έκβαση που παρατηρούμε
+\
+\
+$Y_0\in \{0,1\}$: Έκβαση αν ο ασθενής δεν είχε λάβει τη θεραπεία ενδιαφέροντος
+\
+$Y_1\in \{0,1\}$: Έκβαση αν ο ασθενής είχε λάβει τη θεραπεία ενδιαφέροντος
+
+$$Y=(1-T)Y_0 + TY_1$$
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+> **Στόχος:**
+>
+> *Έχοντας συλλέξει δεδομένα $(X,T,Y)$ για $n$ ασθενείς, ποιο είναι το
+> αναμενόμενο εξατομικευμένο όφελος;*
+
+$$\tau(x) = E\{Y_0-Y_1|X=x\}$$
+
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+Συλλογισμός:
+\
+\
+
+
+[*Χρονομηχανή*]{.fragment} [❯ *Κλωνοποίηση*]{.fragment} [❯ *Δίδυμα*]{.fragment} [❯ *Όμοιοι ασθενείς*]{.fragment}
+
+
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+Στην περίπτωση συνολικής σύγκρισης δύο θεραπειών σε μια κλινική δοκιμή η
+θεραπεία δίνεται τυχαία στους ασθενείς,
+
+\begin{equation}
+\begin{aligned}
+\tau_{overall} &= E\{Y_0-Y_1\} \\
+               &= E\{Y_0\} - E\{Y_1\} \\
+               &= E\{Y|T=0\} - E\{Y|T=1\}
+\end{aligned}
+\end{equation}
+
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+Ομοίως, για την πρόβλεψη του εξατομικευμένου οφέλους:
+
+\begin{equation}
+\begin{aligned}
+\tau(x) &= E\{Y_0-Y_1|X=x\} \\
+        &= E\{Y_0|X=x\} - E\{Y_1|X=x\} \\
+        &= E\{Y|X=x,T=0\} - E\{Y|X=x,T=1\}
+\end{aligned}
+\end{equation}
+
+## Πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+> **Ερώτημα:**
+>
+> *Τι κάνει δύο ασθενείς "όμοιους";*
+
+## Βιβλιογραφική ανασκόπηση {background-image="images/background.png"}
+\
+\
+
+> **Στόχος 1:**
+>
+> *Να κατηγοριοποιήσουμε τις υπάρχουσες μεθόδους για την πρόγνωση οφέλους με
+> βάση το πώς ορίζουν την ομοιότητα μεταξύ των ασθενών.*
+
+## Βιβλιογραφική ανασκόπηση {background-image="images/background.png"}
+\
+\
+\
+
+***Μέθοδοι ρίσκου:***
+\
+
+Η ομοιότητα μεταξύ των ασθενών καθορίζεται μόνο από παράγοντες ρίσκου (risk
+factors).
+
+## Βιβλιογραφική ανασκόπηση {background-image="images/background.png"}
+\
+\
+
+Έχοντας ένα μοντέλο για την πρόγνωση εξατομικευμένου ρίσκου ενός ασθενή με χαρακτηριστικά $x=(x_1,\dots,x_p)$:
+
+\begin{equation}
+\begin{aligned}
+r(x) &= E\{Y|X=x\} \\
+     &= f(\beta_0+\beta_1x_1+\dots+\beta_px_p) \\
+     &= f(lp(x))
+\end{aligned}
+\end{equation}
+
+
+## Βιβλιογραφική ανασκόπηση {background-image="images/background.png"}
+\
+\
+
+Οι μεθόδοι ρίσκου μοντελοποιούν τις υπό συνθήκη πιθανότητες (αρνητικής) έκβασης
+με:
+
+$$E\{Y|X=x,T=t\} = f(lp(x) + \gamma\times t\times lp(x))$$
+
+
+
+## Βιβλιογραφική ανασκόπηση {background-image="images/background.png"}
+\
+\
+
+***Μέθοδοι αλληλεπιδράσεων:***
+\
+
+Η ομοιότητα μεταξύ των ασθενών καθορίζεται τόσο από παράγοντες ρίσκου (risk
+factors) όσο και από τροποποιητές αποτελέσματος (effect modifiers).
+
+
+## Βιβλιογραφική ανασκόπηση {background-image="images/background.png"}
+\
+\
+
+Οι μέθοδοι αλληλεπιδράσεων μοντελοποιούν τις υπό συνθήκη πιθανότητες (αρνητικής)
+έκβασης με:
+
+$$ E\{Y|X=x,T=t\} = f(x^t\beta + x^t\gamma t) $$
+
+
+## Βιβλιογραφική ανασκόπηση {background-image="images/background.png"}
+\
+\
+
+***Μέθοδοι βελτιστοποίησης θεραπευτικής αγωγής:***
+\
+
+Η ομοιότητα μεταξύ των ασθενών καθορίζεται μόνο από τροποποιητές αποτελέσματος
+(effect modifiers).
+
+
+
+## Μέθοδοι ρίσκου {background-image="images/background.png"}
+\
+\
+
+
+> **Στόχος 2:**
+>
+> *Να αναπτύξουμε μεθόδους ρίσκου για την ανάλυση ετερογένειας στην
+> αποτελεσματικότητα των θεραπειών.*
+
+## Παρατηρησιακό περιβάλλον {background-image="images/background.png"}
+\
+\
+
+> **Πρόβλημα:**
+> 
+> *Οι ασθενείς που λαμβάνουν διαφορετικές θεραπείες τείνουν να είναι συστηματικά
+> διαφορετικοί.*
+
+
+## Παρατηρησιακό περιβάλλον {background-image="images/background.png"}
+\
+\
+
+Σε αυτή την περίπτωση,
+
+
+\begin{equation}
+\begin{aligned}
+\tau_{overall} &= E\{Y_0\} - E\{Y_1\} \\
+               &\neq E\{Y|T=0\} - E\{Y|T=1\}
+\end{aligned}
+\end{equation}
+
+
+## Παρατηρησιακό περιβάλλον {background-image="images/background.png"}
+\
+\
+
+\begin{equation}
+\begin{aligned}
+\tau(x) &= E\{Y_0|X=x\} - E\{Y_1|X=x\} \\
+        &\stackrel{?}{=} E\{Y|X=x,T=0\} - E\{Y|X=x,T=1\}
+\end{aligned}
+\end{equation}
+
+
+## Παρατηρησιακό περιβάλλον {background-image="images/background.png"}
+\
+\
+
+![](images/confounding.png){fig-align="center"}
+
+## Παρατηρησιακό περιβάλλον {background-image="images/background.png"}
+\
+\
+
+> **Πρόβλημα:**
+>
+> *Έλλειψη διαλειτουργικότητας μεταξύ των βάσεων παρατηρησιακών δεδομένων.*
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+
+![](images/framework.png){fig-align="center"}
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+
+![](images/framework-main-small.png){fig-align="center"}
+
+
+
+## Συνεχής πρόγνωση οφέλους {background-image="images/background.png"}
+\
+\
+
+![](images/gusto.png){fig-align="center"}
+ 
+## {background-image="images/last-slide.png"}
+\
+\
+\
+\
+
+:::{.thanks}
+Ευχαριστώ πολύ!
+:::
