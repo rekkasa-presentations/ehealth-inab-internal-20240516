@@ -571,6 +571,30 @@ r(x) &amp;= E\{Y|X=x\} \\
 <p><br>
 <br>
 </p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/confounding.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p><span class="math inline">\(V\)</span>: Παράγοντες ρίσκου (risk factors)</p>
+<p><br>
+<br>
+</p>
+<p><span class="math inline">\(W\)</span>: Παράγοντες επιλογής θεραπείας<br>
+<br>
+</p>
+<p><span class="math inline">\(Z\)</span>: Συγχυτικοί παράγοντες (confounders)</p>
+</div>
+</div>
+</section>
+<section id="παρατηρησιακό-περιβάλλον-2" class="slide level2" data-background-image="images/background.png">
+<h2>Παρατηρησιακό περιβάλλον</h2>
+<p><br>
+<br>
+</p>
 <p>Σε αυτή την περίπτωση,</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
@@ -579,7 +603,7 @@ r(x) &amp;= E\{Y|X=x\} \\
 \end{aligned}
 \end{equation}\]</span></p>
 </section>
-<section id="παρατηρησιακό-περιβάλλον-2" class="slide level2" data-background-image="images/background.png">
+<section id="παρατηρησιακό-περιβάλλον-3" class="slide level2" data-background-image="images/background.png">
 <h2>Παρατηρησιακό περιβάλλον</h2>
 <p><br>
 <br>
@@ -591,13 +615,6 @@ r(x) &amp;= E\{Y|X=x\} \\
 \end{aligned}
 \end{equation}\]</span></p>
 </section>
-<section id="παρατηρησιακό-περιβάλλον-3" class="slide level2" data-background-image="images/background.png">
-<h2>Παρατηρησιακό περιβάλλον</h2>
-<p><br>
-<br>
-</p>
-
-<img data-src="images/confounding.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="παρατηρησιακό-περιβάλλον-4" class="slide level2" data-background-image="images/background.png">
 <h2>Παρατηρησιακό περιβάλλον</h2>
 <p><br>
@@ -610,12 +627,171 @@ r(x) &amp;= E\{Y|X=x\} \\
 </section>
 <section id="συστηματοποιημένο-πλαίσιο" class="slide level2" data-background-image="images/background.png">
 <h2>Συστηματοποιημένο πλαίσιο</h2>
-
-<img data-src="images/framework.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<p><img data-src="images/path1.png" class="absolute" style="top: 200px; left: 0px; width: 1000px; "> <img data-src="images/path2.png" class="absolute" style="top: 400px; right: 0px; width: 1200px; "></p>
+</section>
 <section id="συστηματοποιημένο-πλαίσιο-1" class="slide level2" data-background-image="images/background.png">
 <h2>Συστηματοποιημένο πλαίσιο</h2>
 
-<img data-src="images/framework-main-small.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="images/framework.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Rekkas, A., van Klaveren, D., Ryan, P.B. et al.&nbsp;A standardized framework for risk-based assessment of treatment effect heterogeneity in observational healthcare databases. npj Digit. Med. 6, 58 (2023). https://doi.org/10.1038/s41746-023-00794-y</p>
+</div>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-2" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<p><strong><em>Σκορ ροπής (propensity scores):</em></strong></p>
+<p>Είναι η πιθανότητα χορήγησης στον ασθενή της θεραπείας ενδιαφέροντος.</p>
+<p><span class="math display">\[e(x) = P(T=1|X=x)\]</span></p>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-3" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<p><strong><em>Χρήση:</em></strong></p>
+<ul>
+<li>Αντιστοίχιση (matching)</li>
+<li>Στρωματοποίηση (stratification)</li>
+<li>Στάθμιση (weighting)</li>
+<li>Προσαρμογή στο μοντέλο (outcome model adjustment)</li>
+</ul>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-4" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<p><strong><em>Αρνητικοί έλεγχοι:</em></strong></p>
+<p>Ιατρικά αποτελέσματα τα οποία γνωρίζουμε ότι δεν σχετίζονται με τις θεραπείες που συγκρίνουμε.</p>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-5" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<blockquote>
+<p><strong><em>Στόχος:</em></strong></p>
+<p>Να συγκρίνουμε τις θειαζίδες και τα διουρητικά παρόμοιας δράσης (ΤΗΖ) με τους αναστολείς του μετατρεπτικού ενζύμου της αγγειοτασίνης (ΑCE) σε ασθενείς με υπέρταση ως προς 12 πιθανά αποτελέσματα</p>
+</blockquote>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-6" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<p><strong>Κύρια αποτελέσματα</strong>: οξύ έμφραγμα του μυοκαρδίου, εισαγωγή στο νοσοκομείο με καρδιακή ανεπάρκεια, εγκεφαλικό επεισόδιο (ισχαιμικό ή αιμορραγικό)</p>
+<p><br>
+</p>
+<p><strong>Αποτελέσματα ασφαλείας (παρενέργειες)</strong>: οξεία νεφρική ανεπάρκεια, νεφροπάθεια, βήχας, υπερκαλιαιμία, υποκαλιαιμία, γαστρεντερική αιμορραγία, υπονατριαιμία, υπόταση, αγγειακό οίδημα</p>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-7" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<p><strong><em>Βάσεις δεδομένων:</em></strong></p>
+<div style="font-size: 70%;">
+<ul>
+<li><strong>IBM® MarketScan® Commercial Database (CCAE)</strong>: στοιχεία ιατρικών αποζημιώσεων και τα στοιχεία εγγραφής σε παρόχους υγειονομικής ασφάλισης των ΗΠΑ για πάνω από 157 εκατομμύρια εργαζόμενους και τις οικογένειές τους.</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li><strong>IBM® MarketScan® Multi-State Medicaid Database (MDCD)</strong>: στοιχεία χρήσης υπηρεσιών υγείας ατόμων που καλύπτονται από προγράμματα Medicaid στις ΗΠΑ</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li><strong>IBM® MarketScan® Medicare Supplemental Database (MDCR)</strong>: στοιχεία για την παροχή υπηρεσιών υγείας περίπου 10 εκατομμυρίων συνταξιούχων στις ΗΠΑ με συμπληρωματική κάλυψη Medicare μέσω προγραμμάτων που χρηματοδοτούνται από τον εργοδότη</li>
+</ul>
+</div>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-8" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<p><strong><em>Πληθυσμοί:</em></strong></p>
+
+<img data-src="images/framework-table1.png" class="r-stretch"></section>
+<section id="συστηματοποιημένο-πλαίσιο-9" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<p><strong><em>Πρόγνωση:</em></strong></p>
+<ul>
+<li>Υπολογίσαμε ξεχωριστά προγνωστικά μοντέλα για την πρόβλεψη του ρίσκου οξέος εμφράγματος του μυοκαρδίου σε κάθε βάση δεδομένων</li>
+<li><strong>Στρώματα ρίσκου</strong>: κάτω από 1%, ανάμεσα 1% και 1.5%, πάνω από 1.5%</li>
+</ul>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-10" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
+<table>
+<caption>Πίνακας: Διακριτική ικανότητα (c-statistic) των προγνωστικών μοντέλων που χρησιμοποιήθηκαν</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Πληθυσμός</th>
+<th style="text-align: right;">CCAE</th>
+<th style="text-align: right;">MDCD</th>
+<th style="text-align: right;">MDCR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Με αντιστοίχιση</td>
+<td style="text-align: right;">0.73 (0.71, 0.74)</td>
+<td style="text-align: right;">0.76 (0.73, 0.79)</td>
+<td style="text-align: right;">0.65 (0.62, 0.68)</td>
+</tr>
+<tr class="even">
+<td>THZ</td>
+<td style="text-align: right;">0.73 (0.71, 0.75)</td>
+<td style="text-align: right;">0.82 (0.77, 0.86)</td>
+<td style="text-align: right;">0.66 (0.62, 0.70)</td>
+</tr>
+<tr class="odd">
+<td>ACE</td>
+<td style="text-align: right;">0.70 (0.67, 0.71)</td>
+<td style="text-align: right;">0.74 (0.71, 0.76)</td>
+<td style="text-align: right;">0.66 (0.64, 0.68)</td>
+</tr>
+<tr class="even">
+<td>Σύνολο</td>
+<td style="text-align: right;">0.71 (0.70, 0.72)</td>
+<td style="text-align: right;">0.76 (0.74, 0.78)</td>
+<td style="text-align: right;">0.66 (0.64, 0.68)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="συστηματοποιημένο-πλαίσιο-11" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+
+<img data-src="images/framework-absolute-main.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="συστηματοποιημένο-πλαίσιο-12" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+
+<img data-src="images/framework-absolute-safety.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="συστηματοποιημένο-πλαίσιο-13" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+
+<img data-src="images/framework-relative-main.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="συστηματοποιημένο-πλαίσιο-14" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+
+<img data-src="images/framework-relative-safety.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="συνεχής-πρόγνωση-οφέλους" class="slide level2" data-background-image="images/background.png">
 <h2>Συνεχής πρόγνωση οφέλους</h2>
 <p><br>
@@ -690,7 +866,7 @@ r(x) &amp;= E\{Y|X=x\} \\
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

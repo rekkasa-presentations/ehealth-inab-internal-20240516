@@ -6,7 +6,7 @@ format:
     transition: fade
     theme: style.scss
     fontsize: "60px"
-    slide-number: false
+    slide-number: true
     menu: false
 fontcolor: white
 ---
@@ -275,6 +275,33 @@ $$ E\{Y|X=x,T=t\} = f(x^t\beta + x^t\gamma t) $$
 \
 \
 
+::: columns
+::: {.column width="55%"}
+
+
+![](images/confounding.png){fig-align="center"}
+:::
+
+::: {.column width="45%"}
+$V$: Παράγοντες ρίσκου (risk factors)
+
+\
+\
+
+$W$: Παράγοντες επιλογής θεραπείας
+\
+\
+
+$Z$: Συγχυτικοί παράγοντες (confounders)
+
+:::
+:::
+
+
+## Παρατηρησιακό περιβάλλον {background-image="images/background.png"}
+\
+\
+
 Σε αυτή την περίπτωση,
 
 
@@ -302,25 +329,168 @@ $$ E\{Y|X=x,T=t\} = f(x^t\beta + x^t\gamma t) $$
 \
 \
 
-![](images/confounding.png){fig-align="center"}
-
-## Παρατηρησιακό περιβάλλον {background-image="images/background.png"}
-\
-\
-
 > **Πρόβλημα:**
 >
 > *Έλλειψη διαλειτουργικότητας μεταξύ των βάσεων παρατηρησιακών δεδομένων.*
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+
+
+![](images/path1.png){.absolute top=200 left=0 width=1000}
+![](images/path2.png){.absolute top=400 right=0 width=1200}
+
+
+
 
 ## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
 
 ![](images/framework.png){fig-align="center"}
 
+::: {.footer}
+Rekkas, A., van Klaveren, D., Ryan, P.B. et al. A standardized
+framework for risk-based assessment of treatment effect heterogeneity in
+observational healthcare databases. npj Digit. Med. 6, 58
+(2023). https://doi.org/10.1038/s41746-023-00794-y
+:::
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+***Σκορ ροπής (propensity scores):***
+
+Είναι η πιθανότητα χορήγησης στον ασθενή της θεραπείας ενδιαφέροντος.
+
+$$e(x) = P(T=1|X=x)$$
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+***Χρήση:***
+
+* Αντιστοίχιση (matching)
+* Στρωματοποίηση (stratification)
+* Στάθμιση (weighting)
+* Προσαρμογή στο μοντέλο (outcome model adjustment)
+
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+***Αρνητικοί έλεγχοι:***
+
+Ιατρικά αποτελέσματα τα οποία γνωρίζουμε ότι δεν σχετίζονται με τις θεραπείες
+που συγκρίνουμε.
+
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+> ***Στόχος:***
+>
+> Να συγκρίνουμε τις θειαζίδες και τα διουρητικά παρόμοιας δράσης (ΤΗΖ) με τους
+> αναστολείς του μετατρεπτικού ενζύμου της αγγειοτασίνης (ΑCE) σε ασθενείς με
+> υπέρταση ως προς 12 πιθανά αποτελέσματα
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+**Κύρια αποτελέσματα**: οξύ έμφραγμα του μυοκαρδίου, εισαγωγή στο νοσοκομείο με καρδιακή ανεπάρκεια, εγκεφαλικό επεισόδιο (ισχαιμικό ή αιμορραγικό)
+
+\
+
+**Αποτελέσματα ασφαλείας (παρενέργειες)**: οξεία νεφρική ανεπάρκεια, νεφροπάθεια, βήχας, υπερκαλιαιμία, υποκαλιαιμία, γαστρεντερική αιμορραγία, υπονατριαιμία, υπόταση, αγγειακό οίδημα
+
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+***Βάσεις δεδομένων:***
+
+:::{style="font-size: 70%;"}
+
+- **IBM® MarketScan® Commercial Database (CCAE)**: στοιχεία ιατρικών
+αποζημιώσεων και τα στοιχεία εγγραφής σε παρόχους υγειονομικής ασφάλισης των ΗΠΑ
+για πάνω από 157 εκατομμύρια εργαζόμενους και τις οικογένειές τους.
+
+\
+
+- **IBM® MarketScan® Multi-State Medicaid Database (MDCD)**: στοιχεία χρήσης
+υπηρεσιών υγείας ατόμων που καλύπτονται από προγράμματα Medicaid στις ΗΠΑ
+
+\
+
+- **IBM® MarketScan® Medicare Supplemental Database (MDCR)**: στοιχεία για την
+παροχή υπηρεσιών υγείας περίπου 10 εκατομμυρίων συνταξιούχων στις ΗΠΑ με
+συμπληρωματική κάλυψη Medicare μέσω προγραμμάτων που χρηματοδοτούνται από τον
+εργοδότη
+
+:::
+
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+***Πληθυσμοί:***
+
+![](images/framework-table1.png)
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+***Πρόγνωση:***
+
+- Υπολογίσαμε ξεχωριστά προγνωστικά μοντέλα για την πρόβλεψη του ρίσκου οξέος
+εμφράγματος του μυοκαρδίου σε κάθε βάση δεδομένων
+- **Στρώματα ρίσκου**: κάτω από 1%, ανάμεσα 1% και 1.5%, πάνω από 1.5%
+
+
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+\
+\
+
+
+| Πληθυσμός          | CCAE               | MDCD              | MDCR              |
+| ------------------ | -----------------: | ----------------: | ----------------: |
+| Με αντιστοίχιση    | 0.73 (0.71, 0.74)  | 0.76 (0.73, 0.79) | 0.65 (0.62, 0.68) |
+| THZ                | 0.73 (0.71, 0.75)  | 0.82 (0.77, 0.86) | 0.66 (0.62, 0.70) |
+| ACE                | 0.70 (0.67, 0.71)  | 0.74 (0.71, 0.76) | 0.66 (0.64, 0.68) |
+| Σύνολο             | 0.71 (0.70, 0.72)  | 0.76 (0.74, 0.78) | 0.66 (0.64, 0.68) |
+
+: Πίνακας: Διακριτική ικανότητα (c-statistic) των προγνωστικών μοντέλων που χρησιμοποιήθηκαν
 
 ## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
 
-![](images/framework-main-small.png){fig-align="center"}
+![](images/framework-absolute-main.png){fig-align="center"}
 
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+
+![](images/framework-absolute-safety.png){fig-align="center"}
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+
+![](images/framework-relative-main.png){fig-align="center"}
+
+## Συστηματοποιημένο πλαίσιο {background-image="images/background.png"}
+
+![](images/framework-relative-safety.png){fig-align="center"}
 
 
 ## Συνεχής πρόγνωση οφέλους {background-image="images/background.png"}
