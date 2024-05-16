@@ -328,16 +328,6 @@
 <section id="section" class="slide level2" data-background-image="images/first-slide.png">
 <h2></h2>
 </section>
-<section id="πρόγνωση" class="slide level2" data-background-image="images/background.png">
-<h2>Πρόγνωση</h2>
-<p><br>
-<br>
-<br>
-</p>
-<div class="fragment">
-<p><strong><em>Πόση ώρα θα κάνω να φτάσω στο γραφείο;</em></strong></p>
-</div>
-</section>
 <section id="πρόγνωση-έκβασης-υγείας" class="slide level2" data-background-image="images/background.png">
 <h2>Πρόγνωση έκβασης υγείας</h2>
 <p><br>
@@ -378,6 +368,18 @@
 <p><span class="math display">\[r(x) = E\{Y|X=x\} = P(Y=1 | X=x)\]</span></p>
 </section>
 <section id="πρόγνωση-έκβασης-υγείας-3" class="slide level2" data-background-image="images/background.png">
+<h2>Πρόγνωση έκβασης υγείας</h2>
+<p><br>
+<br>
+</p>
+<p><strong><em>Covid Outcome Prediction in the Emergency department (COPE):</em></strong></p>
+<ul>
+<li>5831 ασθενείς από 4 μεγάλα ολλανδικά νοσοκομεία</li>
+<li>Αποτελέσματα ενδιαφέροντος: θάνατος, εισαγωγή στη ΜΕΘ</li>
+<li>Μεταβλητές: ηλικία, ρυθμός αναπνοής, C-αντιδρώσα πρωτεΐνη, γαλακτική αφυδρογονάση (LDH), λευκωματίνη, ουρία</li>
+</ul>
+</section>
+<section id="πρόγνωση-έκβασης-υγείας-4" class="slide level2" data-background-image="images/background.png">
 <h2>Πρόγνωση έκβασης υγείας</h2>
 
 <img data-src="images/cope.png" class="r-stretch"></section>
@@ -518,7 +520,17 @@ r(x) &amp;= E\{Y|X=x\} \\
 <br>
 </p>
 <p>Οι μεθόδοι ρίσκου μοντελοποιούν τις υπό συνθήκη πιθανότητες (αρνητικής) έκβασης με:</p>
-<p><span class="math display">\[E\{Y|X=x,T=t\} = f(lp(x) + \gamma\times t\times lp(x))\]</span></p>
+<p><span class="math display">\[E\{Y|X=x,T=t\} = f(lp(x) + t\times g(lp(x)))\]</span></p>
+<p><br>
+</p>
+<div class="fragment">
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\hat{\tau}(x) &amp;= E\{Y|X=x, T=0\} - E\{Y|X=x, T=1\} \\
+              &amp;= f(lp(x)) - f(lp(x)) + g(lp(x))
+\end{aligned}
+\end{equation}\]</span></p>
+</div>
 </section>
 <section id="βιβλιογραφική-ανασκόπηση-4" class="slide level2" data-background-image="images/background.png">
 <h2>Βιβλιογραφική ανασκόπηση</h2>
@@ -535,7 +547,7 @@ r(x) &amp;= E\{Y|X=x\} \\
 <br>
 </p>
 <p>Οι μέθοδοι αλληλεπιδράσεων μοντελοποιούν τις υπό συνθήκη πιθανότητες (αρνητικής) έκβασης με:</p>
-<p><span class="math display">\[ E\{Y|X=x,T=t\} = f(x^t\beta + x^t\gamma t) \]</span></p>
+<p><span class="math display">\[ E\{Y|X=x,T=t\} = f(g_1(x) + t\times g_2(x)) \]</span></p>
 </section>
 <section id="βιβλιογραφική-ανασκόπηση-6" class="slide level2" data-background-image="images/background.png">
 <h2>Βιβλιογραφική ανασκόπηση</h2>
@@ -579,11 +591,10 @@ r(x) &amp;= E\{Y|X=x\} \\
 </figure>
 </div>
 </div><div class="column" style="width:45%;">
-<p><span class="math inline">\(V\)</span>: Παράγοντες ρίσκου (risk factors)</p>
-<p><br>
+<p><span class="math inline">\(W\)</span>: Παράγοντες ρίσκου (risk factors)<br>
 <br>
 </p>
-<p><span class="math inline">\(W\)</span>: Παράγοντες επιλογής θεραπείας<br>
+<p><span class="math inline">\(V\)</span>: Παράγοντες επιλογής θεραπείας<br>
 <br>
 </p>
 <p><span class="math inline">\(Z\)</span>: Συγχυτικοί παράγοντες (confounders)</p>
@@ -665,6 +676,13 @@ r(x) &amp;= E\{Y|X=x\} \\
 </p>
 <p><strong><em>Αρνητικοί έλεγχοι:</em></strong></p>
 <p>Ιατρικά αποτελέσματα τα οποία γνωρίζουμε ότι δεν σχετίζονται με τις θεραπείες που συγκρίνουμε.</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/negative.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
+</figure>
+</div>
+</div>
 </section>
 <section id="συστηματοποιημένο-πλαίσιο-5" class="slide level2" data-background-image="images/background.png">
 <h2>Συστηματοποιημένο πλαίσιο</h2>
@@ -778,20 +796,59 @@ r(x) &amp;= E\{Y|X=x\} \\
 </section>
 <section id="συστηματοποιημένο-πλαίσιο-11" class="slide level2" data-background-image="images/background.png">
 <h2>Συστηματοποιημένο πλαίσιο</h2>
+<p><br>
+<br>
+</p>
 
-<img data-src="images/framework-absolute-main.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="images/framework-overall-relative.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="συστηματοποιημένο-πλαίσιο-12" class="slide level2" data-background-image="images/background.png">
 <h2>Συστηματοποιημένο πλαίσιο</h2>
 
-<img data-src="images/framework-absolute-safety.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="images/framework-relative-main.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="συστηματοποιημένο-πλαίσιο-13" class="slide level2" data-background-image="images/background.png">
 <h2>Συστηματοποιημένο πλαίσιο</h2>
 
-<img data-src="images/framework-relative-main.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="images/framework-relative-safety.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="συστηματοποιημένο-πλαίσιο-14" class="slide level2" data-background-image="images/background.png">
 <h2>Συστηματοποιημένο πλαίσιο</h2>
 
-<img data-src="images/framework-relative-safety.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="images/framework-absolute-main.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="συστηματοποιημένο-πλαίσιο-15" class="slide level2" data-background-image="images/background.png">
+<h2>Συστηματοποιημένο πλαίσιο</h2>
+
+<img data-src="images/framework-absolute-safety.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="ερμηνεία-αποτελεσμάτων" class="slide level2" data-background-image="images/background.png">
+<h2>Ερμηνεία αποτελεσμάτων</h2>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Τα, <em>κατά μέσο όρο</em>, ευνοϊκά αποτελέσματα με THZ στην αποτροπή εμφραγμάτων που παρατηρήθηκαν οφείλονται κυρίως στους ασθενείς υψηλού ρίσκου</li>
+<li>Αμελητέα οφέλη σε απόλυτη κλίμακα με THZ για ασθενείς σε χαμηλό ρίσκο</li>
+</ul>
+</section>
+<section id="περιορισμοί" class="slide level2" data-background-image="images/background.png">
+<h2>Περιορισμοί</h2>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Όχι αμελητέα αύξηση του ρίσκου υποκαλιαιμίας και υπονατριαιμίας με THZ για όλους τους ασθενείς, ανεξάρτητα ρίσκου</li>
+<li>Αύξηση του ρίσκου αγγειοοιδήματος και βήχα με ACE</li>
+</ul>
+</section>
+<section id="περιορισμοί-1" class="slide level2" data-background-image="images/background.png">
+<h2>Περιορισμοί</h2>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Διαφορετικά προγνωστικά μοντέλα σε κάθε βάση δεδομένων</li>
+<li>Δε διορθώσαμε για συντρέχοντες κινδύνους</li>
+<li>Δε διορθώσαμε για πολλαπλές συγκρίσεις</li>
+<li>Χρησιμοποιήσαμε μόνο βάσεις δεδομένων στις οποίες είχαμε εύκολη πρόσβαση</li>
+</ul>
+</section>
 <section id="συνεχής-πρόγνωση-οφέλους" class="slide level2" data-background-image="images/background.png">
 <h2>Συνεχής πρόγνωση οφέλους</h2>
 <p><br>
